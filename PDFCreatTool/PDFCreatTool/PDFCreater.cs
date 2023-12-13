@@ -1,5 +1,4 @@
-﻿using DH.Util.Gasbox;
-using Microsoft.SqlServer.Server;
+﻿using Microsoft.SqlServer.Server;
 using PdfSharp.Charting;
 using PdfSharp.Drawing;
 using PdfSharp.Pdf;
@@ -20,7 +19,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
 
-namespace Utilities.PDFCreater
+namespace PDFCreatTool.Properties
 {
 
 
@@ -124,7 +123,7 @@ namespace Utilities.PDFCreater
 
 
         #region AddWatermark
-        public void AddWatermark(string text = "德鸿半导体设备（浙江）有限公司")
+        public void AddWatermark(string text = "***有限公司")
         {
             StringContent watermark = new StringContent(text);
             watermark.FontSize = 20;
@@ -150,7 +149,7 @@ namespace Utilities.PDFCreater
                 throw;
             }
         }
-        public void AddHeader(string header = "德鸿半导体设备（浙江）有限公司")
+        public void AddHeader(string header = "***有限公司")
         {
             try
             {
@@ -179,7 +178,7 @@ namespace Utilities.PDFCreater
                 throw;
             }
         }
-        public void AddFooter(string footer = "德鸿半导体设备（浙江）有限公司")
+        public void AddFooter(string footer = "***有限公司")
         {
             try
             {
@@ -1467,7 +1466,7 @@ namespace Utilities.PDFCreater
                 //找到系统字体
                 System.Drawing.Text.PrivateFontCollection pdfFonts = new System.Drawing.Text.PrivateFontCollection();
 
-                byte[] font1 = Properties.FontResource.STFANGSO;
+                byte[] font1 = PDFCreatTool.Properties.Resource1.STFANGSO;
                 IntPtr intPtr = Marshal.UnsafeAddrOfPinnedArrayElement(font1, 0);
                 pdfFonts.AddMemoryFont(intPtr, font1.Length);
 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Utilities.PDFCreater
+namespace PDFCreatTool.Properties
 {
     /// <summary>
     /// PDf内容对象的基类

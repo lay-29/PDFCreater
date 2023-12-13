@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Utilities.PDFCreater
+namespace PDFCreatTool.Properties
 {
     public interface IPDFCreater
     {
@@ -27,7 +27,7 @@ namespace Utilities.PDFCreater
         /// 添加统一格式的公司水印
         /// </summary>
         /// <param name="text"></param>
-        void AddWatermark(string text = "德鸿半导体设备（浙江）有限公司");
+        void AddWatermark(string text = "***有限公司");
         /// <summary>
         /// add  WaterMark on All Pages
         /// </summary>
@@ -36,9 +36,9 @@ namespace Utilities.PDFCreater
 
 
         void AddHeader(StringContent header);
-        void AddHeader(string header = "德鸿半导体设备（浙江）有限公司");
+        void AddHeader(string header = "***有限公司");
         void AddFooter(StringContent footer);
-        void AddFooter(string footer = "德鸿半导体设备（浙江）有限公司");
+        void AddFooter(string footer = "***有限公司");
         void SetPageNumber(Alignment horizontalAlignment, Alignment verticalAlignment);
         /// <summary>
         /// Set Margin For Pdf
@@ -79,7 +79,7 @@ namespace Utilities.PDFCreater
 
                 #region 设置文档标题及署名内容
 
-                pDFCreater.SetTittle($"德鸿半导体（浙江）有限公司{DateTime.Now.ToString("g")}", "检查项目：单腔体测试\t检查时间：2023年5月1日");
+                pDFCreater.SetTittle($"*****有限公司{DateTime.Now.ToString("g")}", "检查项目：*****\t检查时间：2023年5月1日");
 
                 #endregion 设置文档标题及署名内容
 
@@ -277,7 +277,7 @@ namespace Utilities.PDFCreater
                 pDFCreater.SetPageNumber(Alignment.Far, Alignment.Far);
 
                 //保存
-                string savePath = @"C:\Users\24414\Desktop\123.pdf";
+                string savePath = @"C:\Users\123\Desktop\123.pdf";
                 //保存地址，保存完是否打开
                 pDFCreater.Save(savePath, true);
             }
