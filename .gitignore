@@ -2,7 +2,7 @@
 *.obj
 *.cache
 *.suo
-*.dll
+
 *.exe
 *.CopyComplete
 *.exe
